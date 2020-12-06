@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.miklesam.applicationbeerapi.databinding.FragmentMenuBinding
+import dagger.hilt.android.AndroidEntryPoint
 
 class FragmentMenu : Fragment(R.layout.fragment_menu) {
 
