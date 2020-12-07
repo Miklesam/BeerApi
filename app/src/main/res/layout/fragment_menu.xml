@@ -27,12 +27,6 @@
             android:layout_height="wrap_content"
             android:text="Random" />
 
-        <Button
-            android:id="@+id/match_parent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Favorite" />
-
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,13 +1,12 @@
 package com.miklesam.applicationbeerapi
 
 import android.util.Log
-import androidx.lifecycle.LiveData
-import com.miklesam.applicationbeerapi.di.Beer
-import retrofit2.Call
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.liveData
 import java.lang.Exception
 import javax.inject.Inject
 import javax.inject.Singleton
-import kotlin.Result
 
 @Singleton
 class BeerRepository @Inject constructor(private val beerApi: BeerApi) {
@@ -28,5 +27,16 @@ class BeerRepository @Inject constructor(private val beerApi: BeerApi) {
         }
 
     }
+
+
+    fun getSearchBeerResult(food: String) =
+        Pager(
+            config = PagingConfig(
+                pageSize = 5,
+                maxSize = 100,
+                enablePlaceholders = false
+            ),
+            pagingSourceFactory = { BeerPagingSource(beerApi, food) }
+        ).liveData
 
 }

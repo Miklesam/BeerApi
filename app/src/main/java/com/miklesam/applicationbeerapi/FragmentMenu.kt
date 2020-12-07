@@ -22,5 +22,9 @@ class FragmentMenu : Fragment(R.layout.fragment_menu) {
         binding.beerRandom.setOnClickListener {
             navController.navigate(R.id.action_fragmentMenu_to_fragmentRandomBeer)
         }
+
+        binding.beerCategory.setOnClickListener {
+            navController.navigate(R.id.action_fragmentMenu_to_fragmentCategotyBeer)
+        }
     }
 }
