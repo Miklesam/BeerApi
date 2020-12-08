@@ -26,6 +26,6 @@ class CategoryViewModel @ViewModelInject constructor(
 
 
     companion object {
-        private val DEFAULT_CATEGORY_FOOD = "fish"
+        private val DEFAULT_CATEGORY_FOOD = "chicken"
     }
 }

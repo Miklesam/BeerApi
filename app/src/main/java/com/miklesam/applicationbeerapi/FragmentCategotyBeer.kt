@@ -24,7 +24,14 @@ class FragmentCategotyBeer : Fragment(R.layout.fragment_category) {
 
         binding.apply {
             catecoryRecycler.setHasFixedSize(true)
-            catecoryRecycler.adapter = adapter
+            catecoryRecycler.adapter = adapter.withLoadStateHeaderAndFooter(
+                header = BeerLoadStateAdapter{
+                    adapter.retry()
+                },
+                footer = BeerLoadStateAdapter{
+                    adapter.retry()
+                }
+            )
         }
 
         viewModel.beers.observe(viewLifecycleOwner) {
