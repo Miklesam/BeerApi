@@ -1,4 +1,4 @@
-package com.miklesam.applicationbeerapi
+package com.miklesam.applicationbeerapi.ui.category
 
 import android.os.Bundle
 import android.view.Menu
@@ -10,8 +10,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.observe
 import androidx.paging.LoadState
+import com.miklesam.applicationbeerapi.R
 import com.miklesam.applicationbeerapi.databinding.FragmentCategoryBinding
-import com.miklesam.applicationbeerapi.databinding.FragmentRandomBinding
+import com.miklesam.applicationbeerapi.paging.BeerLoadStateAdapter
+import com.miklesam.applicationbeerapi.paging.BeerPagingAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

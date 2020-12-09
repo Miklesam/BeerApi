@@ -1,5 +1,6 @@
-package com.miklesam.applicationbeerapi
+package com.miklesam.applicationbeerapi.network
 
+import com.miklesam.applicationbeerapi.models.Beer
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query

@@ -1,6 +1,8 @@
-package com.miklesam.applicationbeerapi
+package com.miklesam.applicationbeerapi.paging
 
 import androidx.paging.PagingSource
+import com.miklesam.applicationbeerapi.models.Beer
+import com.miklesam.applicationbeerapi.network.BeerApi
 import retrofit2.HttpException
 import java.io.IOException
 

@@ -1,14 +1,14 @@
-package com.miklesam.applicationbeerapi
+package com.miklesam.applicationbeerapi.ui.random
 
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.lifecycle.observe
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.Glide
+import com.miklesam.applicationbeerapi.R
 import com.miklesam.applicationbeerapi.databinding.FragmentRandomBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope

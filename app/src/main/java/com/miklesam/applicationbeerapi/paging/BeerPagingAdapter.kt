@@ -1,4 +1,4 @@
-package com.miklesam.applicationbeerapi
+package com.miklesam.applicationbeerapi.paging
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,10 +7,14 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+import com.miklesam.applicationbeerapi.models.Beer
+import com.miklesam.applicationbeerapi.R
 import com.miklesam.applicationbeerapi.databinding.BeerItemBinding
 
 class BeerPagingAdapter :
-    PagingDataAdapter<Beer, BeerPagingAdapter.BeerViewHolder>(BEER_COMPARATOR) {
+    PagingDataAdapter<Beer, BeerPagingAdapter.BeerViewHolder>(
+        BEER_COMPARATOR
+    ) {
 
     override fun onBindViewHolder(holder: BeerViewHolder, position: Int) {
         val currentItem = getItem(position)
@@ -21,7 +25,9 @@ class BeerPagingAdapter :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BeerViewHolder {
         val binding = BeerItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return BeerViewHolder(binding)
+        return BeerViewHolder(
+            binding
+        )
     }
 
     class BeerViewHolder(private val binding: BeerItemBinding) :

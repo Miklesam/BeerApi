@@ -1,14 +1,12 @@
-package com.miklesam.applicationbeerapi
+package com.miklesam.applicationbeerapi.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
+import com.miklesam.applicationbeerapi.R
 import com.miklesam.applicationbeerapi.databinding.FragmentMenuBinding
-import dagger.hilt.android.AndroidEntryPoint
 
 class FragmentMenu : Fragment(R.layout.fragment_menu) {
 

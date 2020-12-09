@@ -1,4 +1,4 @@
-package com.miklesam.applicationbeerapi
+package com.miklesam.applicationbeerapi.models
 
 data class Beer(
     val name: String,

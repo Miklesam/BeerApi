@@ -1,4 +1,4 @@
-package com.miklesam.applicationbeerapi
+package com.miklesam.applicationbeerapi.ui.category
 
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.switchMap
 import androidx.lifecycle.viewModelScope
 import androidx.paging.cachedIn
+import com.miklesam.applicationbeerapi.data.BeerRepository
 
 class CategoryViewModel @ViewModelInject constructor(
     private val repository: BeerRepository

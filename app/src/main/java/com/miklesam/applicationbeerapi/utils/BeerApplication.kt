@@ -1,4 +1,4 @@
-package com.miklesam.applicationbeerapi
+package com.miklesam.applicationbeerapi.utils
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

@@ -1,6 +1,6 @@
 package com.miklesam.applicationbeerapi.di
 
-import com.miklesam.applicationbeerapi.BeerApi
+import com.miklesam.applicationbeerapi.network.BeerApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

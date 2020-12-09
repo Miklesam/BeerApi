@@ -1,4 +1,4 @@
-package com.miklesam.applicationbeerapi
+package com.miklesam.applicationbeerapi.paging
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

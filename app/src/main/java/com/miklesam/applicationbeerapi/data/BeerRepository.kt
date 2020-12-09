@@ -1,9 +1,13 @@
-package com.miklesam.applicationbeerapi
+package com.miklesam.applicationbeerapi.data
 
 import android.util.Log
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.liveData
+import com.miklesam.applicationbeerapi.network.ApiResult
+import com.miklesam.applicationbeerapi.models.Beer
+import com.miklesam.applicationbeerapi.network.BeerApi
+import com.miklesam.applicationbeerapi.paging.BeerPagingSource
 import java.lang.Exception
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -36,7 +40,12 @@ class BeerRepository @Inject constructor(private val beerApi: BeerApi) {
                 maxSize = 100,
                 enablePlaceholders = false
             ),
-            pagingSourceFactory = { BeerPagingSource(beerApi, food) }
+            pagingSourceFactory = {
+                BeerPagingSource(
+                    beerApi,
+                    food
+                )
+            }
         ).liveData
 
 }
