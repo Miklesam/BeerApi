@@ -1,15 +1,36 @@
 ext {
-    // Network
+
+
+    // Core
+    kotlin_version = '1.4.10'
+    core_version = '1.5.0-alpha05'
+    // UI
+    appcompat_version = '1.3.0-alpha02'
+    materialcomponents_version = '1.3.0-alpha03'
+
     retrofit_version = '2.9.0'
     hiltVersion = "2.28.3-alpha"
     hiltAndroidXVersion = "1.0.0-alpha02"
+    glideVersion = "4.10.0"
+    pagingVersion = "3.0.0-alpha05"
 
     library = [
+            //Core
+            kotlin: "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version",
+            core: "androidx.core:core-ktx:$core_version",
+
+            // UI
+            appcompat: "androidx.appcompat:appcompat:$appcompat_version",
+            materialcomponents: "com.google.android.material:material:$materialcomponents_version",
+
             retrofit               : "com.squareup.retrofit2:retrofit:$retrofit_version",
             retrofit_converter     : "com.squareup.retrofit2:converter-gson:$retrofit_version",
             hilt                   : "com.google.dagger:hilt-android:$hiltVersion",
             hilt_compiler          : "com.google.dagger:hilt-android-compiler:$hiltVersion",
             hilt_android_x         : "androidx.hilt:hilt-lifecycle-viewmodel:$hiltAndroidXVersion",
-            hilt_android_x_compiler: "androidx.hilt:hilt-compiler:$hiltAndroidXVersion"
+            hilt_android_x_compiler: "androidx.hilt:hilt-compiler:$hiltAndroidXVersion",
+            glide                  : "com.github.bumptech.glide:glide:$glideVersion",
+            glide_compiler         : "com.github.bumptech.glide:compiler:$glideVersion",
+            paging                 : "androidx.paging:paging-runtime:$pagingVersion"
     ]
 }
