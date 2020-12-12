@@ -12,19 +12,15 @@ class CategoryViewModel @ViewModelInject constructor(
     private val repository: BeerRepository
 ) : ViewModel() {
 
-
     private val curretQuery = MutableLiveData(DEFAULT_CATEGORY_FOOD)
-
 
     val beers = curretQuery.switchMap { categoryFood ->
         repository.getSearchBeerResult(categoryFood).cachedIn(viewModelScope)
     }
 
-
     fun searchCategoryNeers(food: String) {
         curretQuery.value = food
     }
-
 
     companion object {
         private val DEFAULT_CATEGORY_FOOD = "chicken"

@@ -71,14 +71,10 @@ class FragmentRandomBeer : Fragment(R.layout.fragment_random) {
                 .load(it.image_url)
                 .placeholder(circularProgressDrawable)
                 .into(binding.beerImage)
-
         }
-
 
         randomViewModel.toastEvent.observe(viewLifecycleOwner) {
             Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
         }
-
     }
-
 }

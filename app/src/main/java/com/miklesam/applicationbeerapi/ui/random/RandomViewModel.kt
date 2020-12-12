@@ -5,8 +5,8 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.miklesam.applicationbeerapi.data.BeerRepository
-import com.miklesam.applicationbeerapi.network.ApiResult
 import com.miklesam.applicationbeerapi.models.Beer
+import com.miklesam.applicationbeerapi.network.ApiResult
 import com.miklesam.applicationbeerapi.utils.SingleLiveEvent
 
 class RandomViewModel @ViewModelInject
@@ -33,5 +33,4 @@ constructor(private val repository: BeerRepository) :
             }
         }
     }
-
 }

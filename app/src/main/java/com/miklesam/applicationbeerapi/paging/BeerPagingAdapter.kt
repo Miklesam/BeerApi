@@ -7,9 +7,9 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
-import com.miklesam.applicationbeerapi.models.Beer
 import com.miklesam.applicationbeerapi.R
 import com.miklesam.applicationbeerapi.databinding.BeerItemBinding
+import com.miklesam.applicationbeerapi.models.Beer
 
 class BeerPagingAdapter :
     PagingDataAdapter<Beer, BeerPagingAdapter.BeerViewHolder>(
@@ -41,9 +41,7 @@ class BeerPagingAdapter :
                     .transition(DrawableTransitionOptions.withCrossFade())
                     .error(R.drawable.ic_baseline_sync_24)
                     .into(beerImage)
-
             }
-
         }
     }
 
@@ -56,5 +54,4 @@ class BeerPagingAdapter :
                 oldItem == newItem
         }
     }
-
 }

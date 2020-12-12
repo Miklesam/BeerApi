@@ -3,14 +3,13 @@ package com.miklesam.applicationbeerapi.paging
 import androidx.paging.PagingSource
 import com.miklesam.applicationbeerapi.models.Beer
 import com.miklesam.applicationbeerapi.network.BeerApi
-import retrofit2.HttpException
 import java.io.IOException
+import retrofit2.HttpException
 
 private const val STARTING_PAGE_INDEX = 1
 
 class BeerPagingSource(private val beerApi: BeerApi, private val query: String) :
     PagingSource<Int, Beer>() {
-
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Beer> {
         val position = params.key ?: STARTING_PAGE_INDEX
@@ -27,7 +26,5 @@ class BeerPagingSource(private val beerApi: BeerApi, private val query: String) 
         } catch (exception: HttpException) {
             LoadResult.Error(exception)
         }
-
     }
-
 }

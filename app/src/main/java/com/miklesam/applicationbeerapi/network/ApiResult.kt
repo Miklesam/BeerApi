@@ -1,6 +1,6 @@
 package com.miklesam.applicationbeerapi.network
 
-sealed class ApiResult <out T>(val data : T?, val exception : Throwable?){
+sealed class ApiResult <out T>(val data: T?, val exception: Throwable?) {
     class Failure<T>(exception: Throwable) : ApiResult<T>(null, exception)
     class Success<T>(data: T) : ApiResult<T>(data, null)
 

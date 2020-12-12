@@ -4,8 +4,8 @@ import android.util.Log
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.liveData
-import com.miklesam.applicationbeerapi.network.ApiResult
 import com.miklesam.applicationbeerapi.models.Beer
+import com.miklesam.applicationbeerapi.network.ApiResult
 import com.miklesam.applicationbeerapi.network.BeerApi
 import com.miklesam.applicationbeerapi.paging.BeerPagingSource
 import java.lang.Exception
@@ -29,9 +29,7 @@ class BeerRepository @Inject constructor(private val beerApi: BeerApi) {
         } catch (e: Exception) {
             return ApiResult.failure(RuntimeException("Network unavailable"))
         }
-
     }
-
 
     fun getSearchBeerResult(food: String) =
         Pager(
@@ -47,5 +45,4 @@ class BeerRepository @Inject constructor(private val beerApi: BeerApi) {
                 )
             }
         ).liveData
-
 }

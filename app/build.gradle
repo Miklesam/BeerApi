@@ -6,13 +6,13 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.2"
+    compileSdkVersion versions.compileSdk
+    buildToolsVersion versions.buildTools
 
     defaultConfig {
         applicationId "com.miklesam.applicationbeerapi"
-        minSdkVersion 21
-        targetSdkVersion 30
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
         versionCode 1
         versionName "1.0"
 
@@ -39,32 +39,39 @@ android {
 
 dependencies {
 
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
+    //Core
     implementation library.kotlin
     implementation library.core
+
+    //UI
     implementation library.appcompat
     implementation library.materialcomponents
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.2'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.3.2'
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation library.constraint
+    implementation library.legacy_support
+
+    //AAC
+    implementation library.navigayion_fragment
+    implementation library.navigayion_ui
+    implementation library.paging
 
     // Retrofit
     implementation library.retrofit
     implementation library.retrofit_converter
+
     // Dagger Hilt
     implementation library.hilt
     kapt library.hilt_compiler
     implementation library.hilt_android_x
     kapt library.hilt_android_x_compiler
+
     //Glide
     implementation library.glide
     kapt library.glide_compiler
-    // Paging 3
-    implementation library.paging
+
+    // Tests
+    testImplementation testLibrary.junit
+
+    androidTestImplementation androidTestLibrary.junit_ext
+    androidTestImplementation androidTestLibrary.espresso_core
 
 }
