@@ -10,6 +10,7 @@ import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.Glide
 import com.miklesam.applicationbeerapi.R
 import com.miklesam.applicationbeerapi.databinding.FragmentRandomBinding
+import com.miklesam.applicationbeerapi.ui.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -71,6 +72,7 @@ class FragmentRandomBeer : Fragment(R.layout.fragment_random) {
                 .load(it.image_url)
                 .placeholder(circularProgressDrawable)
                 .into(binding.beerImage)
+            (activity as MainActivity).supportActionBar?.title = it.name
         }
 
         randomViewModel.toastEvent.observe(viewLifecycleOwner) {

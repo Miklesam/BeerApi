@@ -8,8 +8,8 @@
     <fragment
         android:id="@+id/fragmentMenu"
         android:name="com.miklesam.applicationbeerapi.ui.FragmentMenu"
-        android:label="fragment_menu"
-        tools:layout="@layout/fragment_menu" >
+        android:label="Menu"
+        tools:layout="@layout/fragment_menu">
         <action
             android:id="@+id/action_fragmentMenu_to_fragmentRandomBeer"
             app:destination="@id/fragmentRandomBeer" />
@@ -20,9 +20,21 @@
     <fragment
         android:id="@+id/fragmentRandomBeer"
         android:name="com.miklesam.applicationbeerapi.ui.random.FragmentRandomBeer"
-        android:label="FragmentRandomBeer" />
+        android:label="Random" />
     <fragment
         android:id="@+id/fragmentCategotyBeer"
         android:name="com.miklesam.applicationbeerapi.ui.category.FragmentCategotyBeer"
-        android:label="FragmentCategotyBeer" />
+        android:label="Category">
+        <action
+            android:id="@+id/action_fragmentCategotyBeer_to_categoryDetailFragment"
+            app:destination="@id/categoryDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryDetailFragment"
+        android:name="com.miklesam.applicationbeerapi.ui.CategoryDetailFragment"
+        android:label="Beer">
+        <argument
+            android:name="beer"
+            app:argType="com.miklesam.applicationbeerapi.models.Beer" />
+    </fragment>
 </navigation>

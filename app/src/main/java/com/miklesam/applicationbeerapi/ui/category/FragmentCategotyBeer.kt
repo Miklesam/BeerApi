@@ -9,15 +9,18 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.observe
+import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import com.miklesam.applicationbeerapi.R
 import com.miklesam.applicationbeerapi.databinding.FragmentCategoryBinding
+import com.miklesam.applicationbeerapi.models.Beer
 import com.miklesam.applicationbeerapi.paging.BeerLoadStateAdapter
 import com.miklesam.applicationbeerapi.paging.BeerPagingAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class FragmentCategotyBeer : Fragment(R.layout.fragment_category) {
+class FragmentCategotyBeer : Fragment(R.layout.fragment_category),
+    BeerPagingAdapter.OnBeerClickListener {
 
     private val viewModel by viewModels<CategoryViewModel>()
 
@@ -27,7 +30,7 @@ class FragmentCategotyBeer : Fragment(R.layout.fragment_category) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentCategoryBinding.bind(view)
 
-        val adapter = BeerPagingAdapter()
+        val adapter = BeerPagingAdapter(this)
 
         binding.apply {
             catecoryRecycler.setHasFixedSize(true)
@@ -91,5 +94,11 @@ class FragmentCategotyBeer : Fragment(R.layout.fragment_category) {
                 return true
             }
         })
+    }
+
+    override fun onBeerClick(beer: Beer) {
+        val action =
+            FragmentCategotyBeerDirections.actionFragmentCategotyBeerToCategoryDetailFragment(beer)
+        findNavController().navigate(action)
     }
 }

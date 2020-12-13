@@ -11,7 +11,7 @@ import com.miklesam.applicationbeerapi.R
 import com.miklesam.applicationbeerapi.databinding.BeerItemBinding
 import com.miklesam.applicationbeerapi.models.Beer
 
-class BeerPagingAdapter :
+class BeerPagingAdapter(private val listener: OnBeerClickListener) :
     PagingDataAdapter<Beer, BeerPagingAdapter.BeerViewHolder>(
         BEER_COMPARATOR
     ) {
@@ -30,8 +30,20 @@ class BeerPagingAdapter :
         )
     }
 
-    class BeerViewHolder(private val binding: BeerItemBinding) :
+    inner class BeerViewHolder(private val binding: BeerItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            binding.root.setOnClickListener {
+                val position = bindingAdapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    val item = getItem(position)
+                    item?.let {
+                        listener.onBeerClick(it)
+                    }
+                }
+            }
+        }
 
         fun bind(beer: Beer) {
             binding.apply {
@@ -43,6 +55,10 @@ class BeerPagingAdapter :
                     .into(beerImage)
             }
         }
+    }
+
+    interface OnBeerClickListener {
+        fun onBeerClick(beer: Beer)
     }
 
     companion object {
